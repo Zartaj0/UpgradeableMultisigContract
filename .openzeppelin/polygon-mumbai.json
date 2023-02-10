@@ -1,0 +1,934 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x917956e3d1AFcfe1f4d84cde3db9C5226eF22639",
+    "txHash": "0x3913f0e3a8f6d96869604cf797f127ad937b940b7a9d05932748c891437dedfa"
+  },
+  "proxies": [
+    {
+      "address": "0x0e9E483E4b26b3b152754D6acB56Faf86546eF1E",
+      "txHash": "0xf176745a8abaf595568f54a24cac2d17718dda0ee95e62eb431f1309203fa453",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xbAc792D56dC4213356CCC8deb7d8bF07Bc873A92",
+      "txHash": "0x171e4443e1e9cbd887540ffadacd2bf59fcf13126d47757958d31a7f67f7bf90",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "f9c5246d4cdef081c402fe26574d902b26cfa35a7bf9ffaf15ed8053ebe9f88e": {
+      "address": "0xBDBF658feCec0D84811703abc5d50d2dF2383Dab",
+      "txHash": "0xd8bf244e3de48f3ace758f0c0d4c2c711c1a56217951af478c6b9dc77805b2f9",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "requiredApproval",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:34"
+          },
+          {
+            "label": "paused",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:35"
+          },
+          {
+            "label": "owners",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:36"
+          },
+          {
+            "label": "transactions",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Transaction)124_storage)dyn_storage",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:37"
+          },
+          {
+            "label": "proposals",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_struct(Proposal)136_storage)dyn_storage",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:38"
+          },
+          {
+            "label": "isOwner",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:41"
+          },
+          {
+            "label": "ownerIndex",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:42"
+          },
+          {
+            "label": "confirmedTx",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:43"
+          },
+          {
+            "label": "confirmedProposal",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:44"
+          },
+          {
+            "label": "OwnerMap",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint256,t_struct(OwnerProposal)142_storage)",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:45"
+          },
+          {
+            "label": "PolicyMap",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint256,t_struct(PolicyProposal)147_storage)",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:46"
+          },
+          {
+            "label": "PauseMap",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint256,t_struct(PauseProposal)150_storage)",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:47"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Proposal)136_storage)dyn_storage": {
+            "label": "struct MultiSigV1.Proposal[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Transaction)124_storage)dyn_storage": {
+            "label": "struct MultiSigV1.Transaction[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_enum(ProposalType)111": {
+            "label": "enum MultiSigV1.ProposalType",
+            "members": [
+              "RevokeOwner",
+              "AddNewOwner",
+              "ChangeRequired",
+              "pause"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+            "label": "mapping(uint256 => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(OwnerProposal)142_storage)": {
+            "label": "mapping(uint256 => struct MultiSigV1.OwnerProposal)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(PauseProposal)150_storage)": {
+            "label": "mapping(uint256 => struct MultiSigV1.PauseProposal)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(PolicyProposal)147_storage)": {
+            "label": "mapping(uint256 => struct MultiSigV1.PolicyProposal)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnerProposal)142_storage": {
+            "label": "struct MultiSigV1.OwnerProposal",
+            "members": [
+              {
+                "label": "owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "proposalType",
+                "type": "t_enum(ProposalType)111",
+                "offset": 20,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(PauseProposal)150_storage": {
+            "label": "struct MultiSigV1.PauseProposal",
+            "members": [
+              {
+                "label": "_pause",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(PolicyProposal)147_storage": {
+            "label": "struct MultiSigV1.PolicyProposal",
+            "members": [
+              {
+                "label": "previousSignRequirement",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "newRequiredSign",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Proposal)136_storage": {
+            "label": "struct MultiSigV1.Proposal",
+            "members": [
+              {
+                "label": "submittedBy",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "proposalType",
+                "type": "t_enum(ProposalType)111",
+                "offset": 20,
+                "slot": "0"
+              },
+              {
+                "label": "Index",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "executed",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "confirmCount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_struct(Transaction)124_storage": {
+            "label": "struct MultiSigV1.Transaction",
+            "members": [
+              {
+                "label": "submittedBy",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "to",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "txIndex",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "executed",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "confirmCount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "cf843287df089704bf0fa86ee65f8a9f90064deeb923dd3fbb0ab658092c2586": {
+      "address": "0xEa04778e897E91836465Ae5613406FA168E18318",
+      "txHash": "0xb99b4c539c2cd14a67256b3205279d695aaa7921d72df9f79e8b8804d348c0b4",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "requiredApproval",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:34"
+          },
+          {
+            "label": "paused",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:35"
+          },
+          {
+            "label": "owners",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:36"
+          },
+          {
+            "label": "transactions",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Transaction)130_storage)dyn_storage",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:37"
+          },
+          {
+            "label": "proposals",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_struct(Proposal)142_storage)dyn_storage",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:38"
+          },
+          {
+            "label": "isOwner",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:41"
+          },
+          {
+            "label": "ownerIndex",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:42"
+          },
+          {
+            "label": "confirmedTx",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:43"
+          },
+          {
+            "label": "confirmedProposal",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:44"
+          },
+          {
+            "label": "OwnerMap",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint256,t_struct(OwnerProposal)148_storage)",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:45"
+          },
+          {
+            "label": "PolicyMap",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint256,t_struct(PolicyProposal)153_storage)",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:46"
+          },
+          {
+            "label": "PauseMap",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint256,t_struct(PauseProposal)156_storage)",
+            "contract": "MultiSigV1",
+            "src": "contracts\\MultiSigV1.sol:47"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Proposal)142_storage)dyn_storage": {
+            "label": "struct MultiSigV1.Proposal[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Transaction)130_storage)dyn_storage": {
+            "label": "struct MultiSigV1.Transaction[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_enum(ProposalType)114": {
+            "label": "enum MultiSigV1.ProposalType",
+            "members": [
+              "RevokeOwner",
+              "AddNewOwner",
+              "ChangeRequired",
+              "pause"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_enum(Type)109": {
+            "label": "enum MultiSigV1.Type",
+            "members": [
+              "ERC20",
+              "Ether"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+            "label": "mapping(uint256 => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(OwnerProposal)148_storage)": {
+            "label": "mapping(uint256 => struct MultiSigV1.OwnerProposal)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(PauseProposal)156_storage)": {
+            "label": "mapping(uint256 => struct MultiSigV1.PauseProposal)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(PolicyProposal)153_storage)": {
+            "label": "mapping(uint256 => struct MultiSigV1.PolicyProposal)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnerProposal)148_storage": {
+            "label": "struct MultiSigV1.OwnerProposal",
+            "members": [
+              {
+                "label": "owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "proposalType",
+                "type": "t_enum(ProposalType)114",
+                "offset": 20,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(PauseProposal)156_storage": {
+            "label": "struct MultiSigV1.PauseProposal",
+            "members": [
+              {
+                "label": "_pause",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(PolicyProposal)153_storage": {
+            "label": "struct MultiSigV1.PolicyProposal",
+            "members": [
+              {
+                "label": "previousSignRequirement",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "newRequiredSign",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Proposal)142_storage": {
+            "label": "struct MultiSigV1.Proposal",
+            "members": [
+              {
+                "label": "submittedBy",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "proposalType",
+                "type": "t_enum(ProposalType)114",
+                "offset": 20,
+                "slot": "0"
+              },
+              {
+                "label": "Index",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "executed",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "confirmCount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_struct(Transaction)130_storage": {
+            "label": "struct MultiSigV1.Transaction",
+            "members": [
+              {
+                "label": "submittedBy",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "to",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "txIndex",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "executed",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "confirmCount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "_type",
+                "type": "t_enum(Type)109",
+                "offset": 0,
+                "slot": "6"
+              }
+            ],
+            "numberOfBytes": "224"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "b7c26e5b4a76dfd52fbb48636c158d5ef79953edabfe210866da30a2a788d429": {
+      "address": "0x517c1b7BAfd6217CCB995891c11CfA8cbAB9DcEc",
+      "txHash": "0x17c14a137b7c4e1dc156bdaa7a65843485c6e505db553b0bdceded790f5f938b",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "requiredApproval",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:52"
+          },
+          {
+            "label": "paused",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:53"
+          },
+          {
+            "label": "owners",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:54"
+          },
+          {
+            "label": "transactions",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Transaction)173_storage)dyn_storage",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:55"
+          },
+          {
+            "label": "proposals",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_struct(Proposal)185_storage)dyn_storage",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:56"
+          },
+          {
+            "label": "isOwner",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:59"
+          },
+          {
+            "label": "ownerIndex",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:60"
+          },
+          {
+            "label": "confirmedTx",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:61"
+          },
+          {
+            "label": "confirmedProposal",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:62"
+          },
+          {
+            "label": "OwnerMap",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint256,t_struct(OwnerProposal)191_storage)",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:63"
+          },
+          {
+            "label": "PolicyMap",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint256,t_struct(PolicyProposal)196_storage)",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:64"
+          },
+          {
+            "label": "PauseMap",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint256,t_struct(PauseProposal)199_storage)",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:65"
+          },
+          {
+            "label": "TokenAddress",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "MultiSigV2",
+            "src": "contracts\\MultiSigV2.sol:66"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Proposal)185_storage)dyn_storage": {
+            "label": "struct MultiSigV2.Proposal[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Transaction)173_storage)dyn_storage": {
+            "label": "struct MultiSigV2.Transaction[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_enum(ProposalType)157": {
+            "label": "enum MultiSigV2.ProposalType",
+            "members": [
+              "RevokeOwner",
+              "AddNewOwner",
+              "ChangeRequired",
+              "pause"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_enum(Type)152": {
+            "label": "enum MultiSigV2.Type",
+            "members": [
+              "ERC20",
+              "Ether"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+            "label": "mapping(uint256 => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(OwnerProposal)191_storage)": {
+            "label": "mapping(uint256 => struct MultiSigV2.OwnerProposal)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(PauseProposal)199_storage)": {
+            "label": "mapping(uint256 => struct MultiSigV2.PauseProposal)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(PolicyProposal)196_storage)": {
+            "label": "mapping(uint256 => struct MultiSigV2.PolicyProposal)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnerProposal)191_storage": {
+            "label": "struct MultiSigV2.OwnerProposal",
+            "members": [
+              {
+                "label": "owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "proposalType",
+                "type": "t_enum(ProposalType)157",
+                "offset": 20,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(PauseProposal)199_storage": {
+            "label": "struct MultiSigV2.PauseProposal",
+            "members": [
+              {
+                "label": "_pause",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(PolicyProposal)196_storage": {
+            "label": "struct MultiSigV2.PolicyProposal",
+            "members": [
+              {
+                "label": "previousSignRequirement",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "newRequiredSign",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Proposal)185_storage": {
+            "label": "struct MultiSigV2.Proposal",
+            "members": [
+              {
+                "label": "submittedBy",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "proposalType",
+                "type": "t_enum(ProposalType)157",
+                "offset": 20,
+                "slot": "0"
+              },
+              {
+                "label": "Index",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "executed",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "confirmCount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_struct(Transaction)173_storage": {
+            "label": "struct MultiSigV2.Transaction",
+            "members": [
+              {
+                "label": "submittedBy",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "to",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "txIndex",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "executed",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "confirmCount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "_type",
+                "type": "t_enum(Type)152",
+                "offset": 0,
+                "slot": "6"
+              }
+            ],
+            "numberOfBytes": "224"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    }
+  }
+}
