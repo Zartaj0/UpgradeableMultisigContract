@@ -141,28 +141,28 @@ contract MultiSigV2 {
     }
 
     //constructor
-    // constructor(address[] memory _owners, uint256 _required) {
-    //     require(_owners.length > 1, "must be mmore than 1 owner");
-    //     require(
-    //         _owners.length >= _required && _required > 1,
-    //         "Invalid require input"
-    //     );
-    //     unchecked {
-    //         for (uint i = 0; i < _owners.length; ) {
-    //             address owner = _owners[i];
+    constructor(address[] memory _owners, uint256 _required) {
+        require(_owners.length > 1, "must be mmore than 1 owner");
+        require(
+            _owners.length >= _required && _required > 1,
+            "Invalid require input"
+        );
+        unchecked {
+            for (uint i = 0; i < _owners.length; ) {
+                address owner = _owners[i];
 
-    //             require(owner != address(0), "invalid address");
-    //             require(!isOwner[owner], "Owner is already added");
+                require(owner != address(0), "invalid address");
+                require(!isOwner[owner], "Owner is already added");
 
-    //             isOwner[owner] = true;
-    //             owners.push(owner);
-    //             ownerIndex[owner] = i;
+                isOwner[owner] = true;
+                owners.push(owner);
+                ownerIndex[owner] = i;
 
-    //             ++i;
-    //         }
-    //     }
-    //     requiredApproval = _required;
-    // }
+                ++i;
+            }
+        }
+        requiredApproval = _required;
+    }
 
     //view functions
     function showOwners() external view returns (address[] memory) {
